@@ -1,0 +1,53 @@
+<!-- DOM = Document Object Model  -->
+
+<div id="container">
+    <h1 id="title">Hello World</h1>
+    <p>this is a paragraph</p>
+
+
+    <!-- getElementsByClassName -->
+    <p class="para">Paragraph 1</p>
+    <p class="para">Paragraph 2</p>
+
+
+    <!-- getElementsByTagName  -->
+    <p>Tag 1</p>
+    <p>Tag 2</p>
+
+
+    <!-- Using Query Selector -->
+    <p class="paraQuery">Hello Query1</p>
+    <p class="allParaQuery">Hello Query2</p>
+    <p class="allParaQuery">Hello Query3</p>
+
+    <!-- Change Text -->
+    <h1 id="title1">Change Heading</h1>
+</div>
+
+<!-- Accessing Elements in DOM -->
+<script>
+    // getElementById
+    let heading = document.getElementById("title");;
+    console.log(heading);
+    heading.style.color = 'Red'; //change text color
+
+    //getElementsByClassName
+    let paragraph = document.getElementsByClassName("para");
+    console.log(paragraph[0].innerText);
+    paragraph[1].style.fontWeight = "bold";
+    // getElementsByClassName returns HTMLCollection: array-like object
+
+
+    // getElementsByTagName
+    let paragraphs = document.getElementsByTagName("p");
+    paragraphs[3].style.color = "yellow"
+
+
+    // Using Query Selector 
+    let paragraphQuery = document.querySelector(".paraQuery") //first element
+    paragraphQuery.style.fontSize = '60px';
+
+
+    let allParagraphQuery = document.querySelectorAll(".allParaQuery");
+    allParagraphQuery.forEach(elem => elem.style.color = "green");
+</script>
